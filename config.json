@@ -1,0 +1,43 @@
+{
+  "experiment": {
+    "output_dir": "results",
+    "true_function_points": 500
+  },
+  "data": {
+    "x_left": 0.0,
+    "x_right": 1.0,
+    "noise_mean": 0.0,
+    "noise_var": 0.05
+  },
+  "model": {
+    "learning_rate": 0.1,
+    "epochs": 5000,
+    "print_every": 1000
+  },
+  "scenarios": [
+    {
+      "name": "1_good_fit",
+      "degree": 3,
+      "num_samples": 30,
+      "l2_lambda": 0.0
+    },
+    {
+      "name": "2_overfitting",
+      "degree": 15,
+      "num_samples": 15,
+      "l2_lambda": 0.0
+    },
+    {
+      "name": "3_fixed_by_data",
+      "degree": 15,
+      "num_samples": 150,
+      "l2_lambda": 0.0
+    },
+    {
+      "name": "4_fixed_by_l2",
+      "degree": 15,
+      "num_samples": 15,
+      "l2_lambda": 0.5
+    }
+  ]
+}
