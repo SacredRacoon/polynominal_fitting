@@ -37,7 +37,7 @@
       "name": "4_fixed_by_l2",
       "degree": 15,
       "num_samples": 15,
-      "l2_lambda": 0.5
+      "l2_lambda": 0.01
     }
   ]
 }

@@ -11,10 +11,8 @@ class Visualizer:
         os.makedirs(self.output_dir, exist_ok=True)
 
     def plot_results(self, name: str, x_train, y_train, x_true, y_true, y_pred, loss_history):
-        """Сохраняет график с результатами эксперимента."""
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
 
-        # График 1: Аппроксимация
         ax1.scatter(x_train, y_train, color='red', label='Noisy Train Data', zorder=5, s=15)
         ax1.plot(x_true, y_true, color='green', linestyle='--', label='True sin(2πx)', linewidth=2)
         ax1.plot(x_true, y_pred, color='blue', label='Model Prediction', linewidth=2)
@@ -24,7 +22,6 @@ class Visualizer:
         ax1.legend()
         ax1.grid(True, alpha=0.3)
 
-        # График 2: Кривая обучения
         ax2.plot(loss_history, color='purple')
         ax2.set_title("Training Loss (MSE + L2)")
         ax2.set_xlabel("Epoch")
